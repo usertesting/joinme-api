@@ -2,3 +2,52 @@ joinme-api
 ==========
 
 A ruby gem that is a simple wrapper for the join.me API
+
+## How to use ##
+
+### Create an Instance ###
+
+      session = JoinmeApi.new('myemail@gmail.com', 'mypassword')
+
+### Login ###
+
+      session.login
+
+### Request an Auth Code ###
+
+      session.request_auth_code
+
+### Request an Meeting Code ###
+
+      session.request_code
+
+
+### Generate a Download URL for a Meeting ###
+
+      session.download
+      session.download_url
+
+## Official Join.Me Documentation ##
+
+https://secure.join.me/welcome/webhelp/joinme/join.me/c_joinme_API.html
+
+## Contributing
+
+This is a very simple gem and I am sure you could think of something you could
+add to it, please create a pull request.
+
+## Author
+
+Paul Hepworth (http://peppyheppy.com)
+
+## License
+
+The MIT License (MIT)
+Copyright (c) 2011 Paul Hepworth
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+

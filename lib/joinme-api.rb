@@ -54,9 +54,16 @@ class JoinmeApi
     params
   end
 
-  def api_call(call, params)
+  def api_call(call, params={})
     uri = URI("https://secure.join.me/API/#{call}.aspx")
-    res = Net::HTTP.post_form(uri, params)
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    request = Net::HTTP::Post.new(uri.path)
+    params.each do |name, value|
+      request[name] = value
+    end
+    res = http.request(request)
     res.body.to_s
   end
 

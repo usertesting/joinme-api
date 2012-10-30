@@ -8,11 +8,13 @@ Gem::Specification.new do |s|
   s.summary     = "A gem that provides a basic wrapper for the join.me API"
   s.description = "A gem that provides a basic wrapper for the join.me API (https://secure.join.me/welcome/webhelp/joinme/join.me/c_joinme_API.html)"
   s.files       = s.files = `git ls-files`.split("\n")
-  s.add_development_dependency 'rspec', '~2.11.0'
-  s.add_development_dependency 'rb-fsevent', '~0.9.2'
-  s.add_development_dependency 'guard', '~1.5.2'
-  s.add_development_dependency 'guard-bundler', '~1.0.0'
-  s.add_development_dependency 'guard-rspec', '~2.1.0'
-  s.add_development_dependency 'growl', '~1.0.3'
+  s.add_development_dependency 'rspec', '~>2.11.0'
+  s.add_development_dependency 'debugger'
+  s.add_development_dependency 'rb-fsevent', '~>0.9.2'
+  s.add_development_dependency 'guard', '~>1.5.2'
+  s.add_development_dependency 'guard-bundler', '~>1.0.0'
+  s.add_development_dependency 'guard-rspec', '~>2.1.0'
+  s.add_development_dependency 'growl', '~>1.0.3'
+  s.add_development_dependency 'webmock', '~>1.8.11'
 end
 

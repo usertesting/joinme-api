@@ -2,7 +2,7 @@ Gem::Specification.new do |s|
   s.name        = 'joinme-api'
   s.author      = 'Paul Hepworth'
   s.email       = 'paul<dot>hepworth<at>peppyheppy<dot>com'
-  s.version     = '0.0.2
+  s.version     = '0.0.2'
   s.homepage    = 'https://github.com/peppyheppy/joinme-api'
   s.date        = '2012-10-29'
   s.summary     = "A gem that provides a basic wrapper for the join.me API"

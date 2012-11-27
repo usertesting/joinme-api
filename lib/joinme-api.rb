@@ -35,7 +35,7 @@ class JoinmeApi
     end
 
     if codes['code'] and codes['ticket']
-      "https://secure.join.me/download.aspx?code=%s&ticket=%s" % [codes['code'], codes['ticket']]
+      "https://secure.join.me/download.aspx?webdownload=true&code=%s&ticket=%s" % [codes['code'], codes['ticket']]
     end
   end
   alias :download_url :download

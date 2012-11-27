@@ -93,7 +93,7 @@ describe JoinmeApi do
         .with(:body => {"authcode"=>"usbzlurwujpw2xbfy1xc2cjiuovaankw"})
         .to_return(:status => 200, :body => "OK\nCODE: 101494581\nTICKET: 432412671")
 
-      url = "https://secure.join.me/download.aspx?code=101494588&ticket=432412675"
+      url = "https://secure.join.me/download.aspx?webdownload=true&code=101494588&ticket=432412675"
       @api.download('101494588','432412675').should == url
       @api.download_url('101494588','432412675').should == url
     end
@@ -104,7 +104,7 @@ describe JoinmeApi do
         .with(:body => {"authcode"=>"usbzlurwujpw2xbfy1xc2cjiuovaankw"})
         .to_return(:status => 200, :body => "OK\nCODE: 101494581\nTICKET: 432412671")
 
-      url = "https://secure.join.me/download.aspx?code=101494588&ticket=432412675"
+      url = "https://secure.join.me/download.aspx?webdownload=true&code=101494588&ticket=432412675"
       @api.download('101494588','432412675').should == url
     end
 
@@ -119,7 +119,7 @@ describe JoinmeApi do
         .with(:body => {"authcode"=>"usbzlurwujpw2xbfy1xc2cjiuovaankw"})
         .to_return(:status => 200, :body => "OK\nCODE: 101494588\nTICKET: 432412675")
 
-      url = "https://secure.join.me/download.aspx?code=101494588&ticket=432412675"
+      url = "https://secure.join.me/download.aspx?webdownload=true&code=101494588&ticket=432412675"
       @api.download.should == url
     end
 

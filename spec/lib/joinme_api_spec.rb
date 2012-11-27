@@ -15,7 +15,7 @@ describe JoinmeApi do
 
   describe "#login" do
     it "should hit the login api" do
-      stub_request(:post, "https://secure.join.me/API/login.aspx")
+      stub_request(:post, "https://secure.join.me/API/login")
         .with(:body => {"email"=>"p@z.com", "password"=>"qawsed"})
         .to_return(:status => 200, :body => "OK")
 
@@ -23,7 +23,7 @@ describe JoinmeApi do
     end
 
     it "should handle errors" do
-      stub_request(:post, "https://secure.join.me/API/login.aspx")
+      stub_request(:post, "https://secure.join.me/API/login")
         .with(:body => {"email"=>"p@z.com", "password"=>"qawsed"})
         .to_return(:status => 200, :body => "ERROR: 4; Invalid email or password")
 
@@ -33,7 +33,7 @@ describe JoinmeApi do
 
   describe "#request_auth_code" do
     it "should return an auth code" do
-      stub_request(:post, "https://secure.join.me/API/requestAuthCode.aspx")
+      stub_request(:post, "https://secure.join.me/API/requestAuthCode")
         .with(:body => {"email"=>"p@z.com", "password"=>"qawsed"})
         .to_return(:status => 200, :body => "OK\nAUTHCODE: usbzlurwujpw2xbfy1xc2cjiuovaankw")
 
@@ -41,7 +41,7 @@ describe JoinmeApi do
     end
 
     it "should handle errors" do
-      stub_request(:post, "https://secure.join.me/API/requestAuthCode.aspx")
+      stub_request(:post, "https://secure.join.me/API/requestAuthCode")
         .with(:body => {"email"=>"p@z.com", "password"=>"qawsed"})
         .to_return(:status => 200, :body => "ERROR: 4; Invalid email or password")
 
@@ -52,12 +52,12 @@ describe JoinmeApi do
   describe "#request_code" do
     it "should return an meeting and ticket codes" do
       # stub the request auth code call
-      stub_request(:post, "https://secure.join.me/API/requestAuthCode.aspx")
+      stub_request(:post, "https://secure.join.me/API/requestAuthCode")
         .with(:body => {"email"=>"p@z.com", "password"=>"qawsed"})
         .to_return(:status => 200, :body => "OK\nAUTHCODE: usbzlurwujpw2xbfy1xc2cjiuovaankw")
 
       # stub the request meeting code
-      stub_request(:post, "https://secure.join.me/API/requestCode.aspx")
+      stub_request(:post, "https://secure.join.me/API/requestCode")
         .with(:body => {"authcode"=>"usbzlurwujpw2xbfy1xc2cjiuovaankw"})
         .to_return(:status => 200, :body => "OK\nCODE: 101494581\nTICKET: 432412671")
 
@@ -66,11 +66,11 @@ describe JoinmeApi do
 
     it "should handle errors" do
       # stub the request auth code call
-      stub_request(:post, "https://secure.join.me/API/requestAuthCode.aspx")
+      stub_request(:post, "https://secure.join.me/API/requestAuthCode")
         .with(:body => {"email"=>"p@z.com", "password"=>"qawsed"})
         .to_return(:status => 200, :body => "OK\nAUTHCODE: usbzlurwujpw2xbfy1xc2cjiuovaankw")
 
-      stub_request(:post, "https://secure.join.me/API/requestCode.aspx")
+      stub_request(:post, "https://secure.join.me/API/requestCode")
         .with(:body => {"authcode"=>"usbzlurwujpw2xbfy1xc2cjiuovaankw"})
         .to_return(:status => 200, :body => "ERROR: 4; Invalid email or password")
 
@@ -78,7 +78,7 @@ describe JoinmeApi do
     end
 
     it "should accept the request code as a parameter" do
-      stub_request(:post, "https://secure.join.me/API/requestCode.aspx")
+      stub_request(:post, "https://secure.join.me/API/requestCode")
         .with(:body => {"authcode"=>"usbzlurwujpw2xbfy1xc2cjiuovaankw"})
         .to_return(:status => 200, :body => "ERROR: 4; Invalid email or password")
 
@@ -89,7 +89,7 @@ describe JoinmeApi do
   describe "#download and #download_url" do
     it "should return the download url" do
       # stub the request meeting code
-      stub_request(:post, "https://secure.join.me/API/requestCode.aspx")
+      stub_request(:post, "https://secure.join.me/API/requestCode")
         .with(:body => {"authcode"=>"usbzlurwujpw2xbfy1xc2cjiuovaankw"})
         .to_return(:status => 200, :body => "OK\nCODE: 101494581\nTICKET: 432412671")
 
@@ -100,7 +100,7 @@ describe JoinmeApi do
 
     it "should return the download url" do
       # stub the request meeting code
-      stub_request(:post, "https://secure.join.me/API/requestCode.aspx")
+      stub_request(:post, "https://secure.join.me/API/requestCode")
         .with(:body => {"authcode"=>"usbzlurwujpw2xbfy1xc2cjiuovaankw"})
         .to_return(:status => 200, :body => "OK\nCODE: 101494581\nTICKET: 432412671")
 
@@ -110,12 +110,12 @@ describe JoinmeApi do
 
     it "should return the download url" do
       # stub the request auth code call
-      stub_request(:post, "https://secure.join.me/API/requestAuthCode.aspx")
+      stub_request(:post, "https://secure.join.me/API/requestAuthCode")
         .with(:body => {"email"=>"p@z.com", "password"=>"qawsed"})
         .to_return(:status => 200, :body => "OK\nAUTHCODE: usbzlurwujpw2xbfy1xc2cjiuovaankw")
 
       # stub the request meeting code
-      stub_request(:post, "https://secure.join.me/API/requestCode.aspx")
+      stub_request(:post, "https://secure.join.me/API/requestCode")
         .with(:body => {"authcode"=>"usbzlurwujpw2xbfy1xc2cjiuovaankw"})
         .to_return(:status => 200, :body => "OK\nCODE: 101494588\nTICKET: 432412675")
 
@@ -125,12 +125,12 @@ describe JoinmeApi do
 
     it "should handle errors" do
       # stub the request auth code call
-      stub_request(:post, "https://secure.join.me/API/requestAuthCode.aspx")
+      stub_request(:post, "https://secure.join.me/API/requestAuthCode")
         .with(:body => {"email"=>"p@z.com", "password"=>"qawsed"})
         .to_return(:status => 200, :body => "OK\nAUTHCODE: usbzlurwujpw2xbfy1xc2cjiuovaankw")
 
       # stub the request meeting code
-      stub_request(:post, "https://secure.join.me/API/requestCode.aspx")
+      stub_request(:post, "https://secure.join.me/API/requestCode")
         .with(:body => {"authcode"=>"usbzlurwujpw2xbfy1xc2cjiuovaankw"})
         .to_return(:status => 200, :body => "ERROR: 4; Invalid email or password")
 

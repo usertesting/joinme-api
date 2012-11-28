@@ -7,25 +7,15 @@ A ruby gem that is a simple wrapper for the join.me API
 
 ### Create an Instance ###
 
-      session = JoinmeApi.new('myemail@gmail.com', 'mypassword')
+      session = Joinme::Session.new 'myemail@gmail.com', 'mypassword'
 
-### Login ###
+### Presenter URL ###
 
-      session.login
+      session.presenter_url
 
-### Request an Auth Code ###
+### Participant URL ###
 
-      session.request_auth_code
-
-### Request an Meeting Code ###
-
-      session.request_code
-
-
-### Generate a Download URL for a Meeting ###
-
-      session.download
-      session.download_url
+      session.participant_url
 
 ## Official Join.Me Documentation ##
 

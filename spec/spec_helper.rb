@@ -1,6 +1,6 @@
-require "rubygems"
-require "bundler/setup"
-require "joinme-api"
+require 'rubygems'
+require 'joinme-api'
+require 'bundler/setup'
 require 'webmock/rspec'
 
 RSpec.configure do |config|

@@ -3,9 +3,8 @@ require './lib/joinme-api/version'
 Gem::Specification.new do |s|
   s.name    = 'joinme-api'
   s.version = Joinme::VERSION
-  s.author  = 'Paul Hepworth'
-  s.email   = 'paul<dot>hepworth<at>peppyheppy<dot>com'
-
+  s.authors      = ['Paul Hepworth', 'Ryan Montgomery']
+  s.email       = ['paul<dot>hepworth<at>peppyheppy<dot>com', 'rmontgomery429<at>gmail<dot>com']
   s.description = "A simple library for communicating with the join.me API (https://secure.join.me/welcome/webhelp/joinme/join.me/c_joinme_API.html)"
   s.summary     = "A simple library for communicating with the join.me API"
   s.homepage    = 'https://github.com/peppyheppy/joinme-api'
